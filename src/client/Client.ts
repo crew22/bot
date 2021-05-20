@@ -8,13 +8,11 @@ import {
 	MessageEmbed,
 } from 'discord.js';
 import glob from 'glob';
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 import { promisify } from 'util';
 import { Command } from '../interfaces/Command';
 import { Event } from '../interfaces/Event';
 import { Config } from '../interfaces/Config';
-
-
 
 const globPromise = promisify(glob);
 
@@ -36,19 +34,28 @@ class Bot extends Client {
 	}
 
 	public async start(config: Config): Promise<void> {
-
-
 		this.config = config;
 
-		await mongoose.connect(this.config.mongoUri, { useCreateIndex: true, useFindAndModify: true, useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
-			if (err) return this.logger.error(err);
-			this.logger.success("Database connection has been established successfully.");
-		});
+		await mongoose.connect(
+			process.env.MONGO_URI,
+			{
+				useCreateIndex: true,
+				useFindAndModify: true,
+				useNewUrlParser: true,
+				useUnifiedTopology: true,
+			},
+			(err) => {
+				if (err) return this.logger.error(err);
+				this.logger.success(
+					'Database connection has been established successfully.'
+				);
+			}
+		);
 
 		const commandFiles: string[] = await globPromise(
 			__dirname + '/../commands/**/*{.ts,.js}'
 		);
-		
+
 		commandFiles.map(async (value: string) => {
 			const file: Command = await import(value);
 
@@ -69,15 +76,17 @@ class Bot extends Client {
 			this.on(file.name, file.run.bind(null, this));
 		});
 
-		this.login(config.token);
+		this.login(process.env.BOT_TOKEN);
 	}
-	public createEmbed(options: MessageEmbedOptions, message: Message): MessageEmbed {
+	public createEmbed(
+		options: MessageEmbedOptions,
+		message: Message
+	): MessageEmbed {
 		return new MessageEmbed({ ...options, color: 'BLUE' }).setFooter(
 			`${message.author.tag} | ${this.user.username}`,
 			message.author.displayAvatarURL({ format: 'png', dynamic: true })
 		);
 	}
-
 }
 
 export { Bot };
