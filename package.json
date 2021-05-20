@@ -68,6 +68,7 @@
 	"dependencies": {
 		"consola": "^2.15.3",
 		"discord.js": "^12.5.3",
+		"dotenv": "^9.0.2",
 		"glob": "^7.1.7",
 		"mongodb": "^3.6.7",
 		"mongoose": "^5.12.10"

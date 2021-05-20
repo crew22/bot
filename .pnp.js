@@ -45,6 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:15.3.0"],
             ["consola", "npm:2.15.3"],
             ["discord.js", "npm:12.5.3"],
+            ["dotenv", "npm:9.0.2"],
             ["glob", "npm:7.1.7"],
             ["husky", "npm:6.0.0"],
             ["lint-staged", "npm:11.0.0"],
@@ -1226,6 +1227,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["dot-prop", "npm:5.3.0"],
             ["is-obj", "npm:2.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["dotenv", [
+        ["npm:9.0.2", {
+          "packageLocation": "./.yarn/cache/dotenv-npm-9.0.2-fd127dfe81-062a31a2fd.zip/node_modules/dotenv/",
+          "packageDependencies": [
+            ["dotenv", "npm:9.0.2"]
           ],
           "linkType": "HARD",
         }]
@@ -3774,6 +3784,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:15.3.0"],
             ["consola", "npm:2.15.3"],
             ["discord.js", "npm:12.5.3"],
+            ["dotenv", "npm:9.0.2"],
             ["glob", "npm:7.1.7"],
             ["husky", "npm:6.0.0"],
             ["lint-staged", "npm:11.0.0"],
