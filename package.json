@@ -1,0 +1,75 @@
+{
+	"name": "ts-bot",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "ts-node-dev --respawn --transpile-only --poll ./src/index.ts",
+		"start": "ts-node ./src/index.ts",
+		"lint": "prettier --write .",
+		"build": "tsc"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"@commitlint/cli": "^12.1.4",
+		"@commitlint/config-angular": "^12.1.4",
+		"@types/glob": "^7",
+		"@types/mongodb": "^3",
+		"@types/mongoose": "^5",
+		"@types/node": "^15.3.0",
+		"husky": "^6.0.0",
+		"lint-staged": "^11.0.0",
+		"prettier": "^2.3.0",
+		"ts-node": "^9.1.1",
+		"ts-node-dev": "^1.1.6",
+		"typescript": "^4.2.4"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "yarn dlx @yarnpkg/doctor && lint-staged",
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+		}
+	},
+	"lint-staged": {
+		"*.ts": "prettier --write",
+		"*.js": "prettier --write"
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-angular"
+		],
+		"rules": {
+			"scope-case": [
+				2,
+				"always",
+				"pascal-case"
+			],
+			"type-enum": [
+				2,
+				"always",
+				[
+					"chore",
+					"build",
+					"ci",
+					"docs",
+					"feat",
+					"fix",
+					"perf",
+					"refactor",
+					"revert",
+					"style",
+					"test"
+				]
+			]
+		}
+	},
+	"dependencies": {
+		"consola": "^2.15.3",
+		"discord.js": "^12.5.3",
+		"glob": "^7.1.7",
+		"mongodb": "^3.6.7",
+		"mongoose": "^5.12.10"
+	}
+}

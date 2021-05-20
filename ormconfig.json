@@ -1,0 +1,10 @@
+{
+    "type": "mongodb",
+    "url": "mongodb://localhost:27017/ts_bot?readPreference=primary",
+    "useNewUrlParser": true,
+    "synchronize": true,
+    "logging": true,
+    "entities": [
+        "src/entities/*.*"
+    ]
+}
