@@ -76,7 +76,8 @@ typings/
 .fusebox/
 
 # Yarn
-.yarn/*
+.yarn/unplugged/
+.yarn/cache/
 !.yarn/patches
 !.yarn/releases
 !.yarn/plugins
