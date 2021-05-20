@@ -1,0 +1,6 @@
+{
+	"token": "NzA0MzA0Mjk2NTg1MzMwNzAw.XqbMfQ.-yEI_2Ns0dmDmTb2H3lOb0Gmonw",
+	"mongoUri": "mongodb://localhost:27017/ts-bot?readPreference=primary",
+	"defaultPrefix": "!",
+	"defaultLanguage": "tr"
+}
