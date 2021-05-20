@@ -75,13 +75,3 @@ src/config/*.env
 
 # FuseBox cache
 .fusebox/
-
-# Yarn
-.yarn/unplugged/
-.yarn/cache/
-!.yarn/patches
-!.yarn/releases
-!.yarn/plugins
-!.yarn/sdks
-!.yarn/versions
-.pnp.*
