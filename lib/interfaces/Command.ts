@@ -1,13 +1,15 @@
-import { Bot } from '../client/Client';
+import { Bot } from '../ws/Client';
 import { Message, PermissionString } from 'discord.js';
+import { ILanguageService } from './Language';
 
 export interface RunFunction {
-	(client: Bot, message: Message, args: string[]): Promise<any>;
+	(client: Bot, message: Message, args: string[], language: ILanguageService): Promise<any>;
 }
 
-export interface Command {
-	run: RunFunction;
+export interface ICommand {
 	config: CommandConfig;
+
+	run(client: Bot, message: Message, args: string[], language: ILanguageService): Promise<any>;
 }
 
 export interface CommandConfig {
@@ -18,4 +20,4 @@ export interface CommandConfig {
 	maintenance: boolean;
 }
 
-export type CommandCategory = 'moderation' | 'general' | 'other';
+export type CommandCategory = 'moderation' | 'general' | 'other' | "fun";
