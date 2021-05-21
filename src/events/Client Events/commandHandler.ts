@@ -1,16 +1,18 @@
 import { Message } from 'discord.js';
-import { Command } from '@crew22/lib/interfaces/Command';
-import { RunEventFunction } from '@crew22/lib/interfaces/Event';
-import { getUserAsMember } from '@crew22/lib/util/discord';
-import Server from '@crew22/lib/models/Server';
+import { ICommand } from '../../../lib/interfaces/Command';
+import { RunEventFunction } from '../../../lib/interfaces/Event';
+import { getUserAsMember } from '../../../lib/util/discord';
+import Server from '../../../lib/models/Server';
+import { LanguageService } from '../../../lib/util/language/Language';
 
+// @ts-ignore
 export const run: RunEventFunction = async (client, message: Message) => {
 	const guild = await Server.findOneOrCreate({ id: message.guild.id });
 
 	if (message.content.indexOf(guild.prefix) == 0) {
 		const args = message.content.slice(guild.prefix.length).trim().split(/ +/g);
 		const commandName: string = args.shift().toLowerCase();
-		let cmd: Command;
+		let cmd: ICommand;
 
 		if (client.commands.has(commandName)) {
 			cmd = client.commands.get(commandName);
@@ -21,14 +23,10 @@ export const run: RunEventFunction = async (client, message: Message) => {
 		if (cmd) {
 			if (cmd.config.maintenance)
 				return message.channel.send('Command is under maintenance!');
-			if (
-				!getUserAsMember(client, message.guild, message.author).permissions.has(
-					cmd.config.permission
-				)
-			)
-				return;
+			if (!getUserAsMember(client, message.guild, message.author).permissions.has(cmd.config.permission)) return;
+			const languageService = new LanguageService(guild.language);
 
-			await cmd.run(client, message, args);
+			await cmd.run(client, message, args, languageService);
 		}
 	}
 };
