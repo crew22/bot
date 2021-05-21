@@ -1,8 +1,8 @@
 require('module-alias/register');
 
-import { Config } from '@magnet/lib/interfaces/Config';
-import config from '@magnet/config';
-import { Bot } from '@magnet/lib/ws/Client';
+import { Config } from '@crew22/lib/interfaces/Config';
+import config from '@crew22/config';
+import { Bot } from '@crew22/lib/ws/Client';
 import path from 'path';
 
 require('dotenv').config({

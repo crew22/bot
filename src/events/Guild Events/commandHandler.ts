@@ -1,8 +1,8 @@
 import { Message } from 'discord.js';
-import { Command } from '@magnet/lib/interfaces/Command';
-import { RunEventFunction } from '@magnet/lib/interfaces/Event';
-import { getUserAsMember } from '@magnet/lib/util/discord';
-import Server from '@magnet/lib/models/Server';
+import { Command } from '@crew22/lib/interfaces/Command';
+import { RunEventFunction } from '@crew22/lib/interfaces/Event';
+import { getUserAsMember } from '@crew22/lib/util/discord';
+import Server from '@crew22/lib/models/Server';
 
 export const run: RunEventFunction = async (client, message: Message) => {
 	const guild = await Server.findOneOrCreate({ id: message.guild.id });

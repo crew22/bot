@@ -69,8 +69,8 @@
 		"mongoose": "^5.12.10"
 	},
 	"_moduleAliases": {
-		"@magnet/lib": "./lib",
-		"@magnet/src": "./src",
-		"@magnet/config": "./config"
+		"@crew22/lib": "./lib",
+		"@crew22/src": "./src",
+		"@crew22/config": "./config"
 	}
 }
