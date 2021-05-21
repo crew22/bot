@@ -1,5 +1,4 @@
-import { RunEventFunction } from '../../interfaces/Event';
-import { Message } from 'discord.js';
+import { RunEventFunction } from '@magnet/lib/interfaces/Event';
 
 export const run: RunEventFunction = async (client) => {
 	client.logger.success(`${client.user.tag} is now online!`);

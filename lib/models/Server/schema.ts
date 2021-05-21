@@ -1,7 +1,7 @@
 import { Schema } from 'mongoose';
 import ServerDocument, { IServerDocument } from './document';
 import Server, { FindOrCreateCondition } from './index';
-import config from '../../config';
+import config from '../../../config';
 
 const ServerSchema: Schema = new Schema({
 	id: {

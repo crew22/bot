@@ -1,4 +1,4 @@
-import { CommandConfig, RunFunction } from '../../interfaces/Command';
+import { CommandConfig, RunFunction } from '@magnet/lib/interfaces/Command';
 
 export const run: RunFunction = async (client, message, args) => {
 	message.channel.send(`Pong! Ms: ${Date.now() - message.createdTimestamp}`);

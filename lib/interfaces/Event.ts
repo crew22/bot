@@ -1,4 +1,4 @@
-import { Bot } from '../client/Client';
+import { Bot } from '../ws/Client';
 
 export interface RunEventFunction {
 	(client: Bot, args: any[]): Promise<any>;

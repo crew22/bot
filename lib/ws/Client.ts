@@ -8,11 +8,11 @@ import {
 	MessageEmbed,
 } from 'discord.js';
 import glob from 'glob';
-import mongoose from 'mongoose';
 import { promisify } from 'util';
 import { Command } from '../interfaces/Command';
 import { Event } from '../interfaces/Event';
 import { Config } from '../interfaces/Config';
+import DatabaseManager from '../util/DatabaseManager';
 
 const globPromise = promisify(glob);
 
@@ -22,6 +22,9 @@ class Bot extends Client {
 	public aliases: Collection<string, string> = new Collection();
 	public events: Collection<string, Event> = new Collection();
 	public config: Config;
+	private databaseManager: DatabaseManager = new DatabaseManager(
+		process.env.MONGO_URI
+	);
 
 	public constructor() {
 		super({
@@ -34,26 +37,12 @@ class Bot extends Client {
 	}
 
 	public async start(config: Config): Promise<void> {
+		this.databaseManager.connect();
+
 		this.config = config;
 
-		await mongoose.connect(
-			process.env.MONGO_URI,
-			{
-				useCreateIndex: true,
-				useFindAndModify: true,
-				useNewUrlParser: true,
-				useUnifiedTopology: true,
-			},
-			(err) => {
-				if (err) return this.logger.error(err);
-				this.logger.success(
-					'Database connection has been established successfully.'
-				);
-			}
-		);
-
 		const commandFiles: string[] = await globPromise(
-			__dirname + '/../commands/**/*{.ts,.js}'
+			__dirname + '/../../src/commands/**/*{.ts,.js}'
 		);
 
 		commandFiles.map(async (value: string) => {
@@ -66,7 +55,7 @@ class Bot extends Client {
 		});
 
 		const eventFiles: string[] = await globPromise(
-			__dirname + '/../events/**/*{.ts,.js}'
+			__dirname + '/../../src/events/**/*{.ts,.js}'
 		);
 
 		eventFiles.map(async (value: string) => {
