@@ -7,8 +7,8 @@ jobs:
         - checkout
         - node/install-packages
         - run:
-          name: Run unit tests
-          command: npm test
+            name: Run unit tests
+            command: npm test
         - store_test_results:
             path: test-results
         - store_artifacts:
