@@ -21,9 +21,8 @@ export const run: RunEventFunction = async (client, message: Message) => {
 		}
 
 		if (cmd) {
-			if (cmd.config.maintenance)
-				return message.channel.send('Command is under maintenance!');
-			if (!getUserAsMember(client, message.guild, message.author).permissions.has(cmd.config.permission)) return;
+			if (cmd.config.maintenance) return message.channel.send('Command is under maintenance!');
+			if (!getUserAsMember(message.guild, message.author).permissions.has(cmd.config.permission)) return;
 			const languageService = new LanguageService(guild.language);
 
 			await cmd.run(client, message, args, languageService);

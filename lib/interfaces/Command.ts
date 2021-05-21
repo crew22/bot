@@ -8,7 +8,6 @@ export interface RunFunction {
 
 export interface ICommand {
 	config: CommandConfig;
-
 	run(client: Bot, message: Message, args: string[], language: ILanguageService): Promise<any>;
 }
 
@@ -18,6 +17,13 @@ export interface CommandConfig {
 	permission: PermissionString;
 	aliases: string[];
 	maintenance: boolean;
+	description?: string;
+	args?: string[];
+}
+
+export interface LanguageCommandInfo {
+	description: string;
+	args: string[];
 }
 
 export type CommandCategory = 'moderation' | 'general' | 'other' | "fun";
