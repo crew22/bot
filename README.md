@@ -8,8 +8,8 @@
 - [Project Description](#-project-description)
 - [Features](#-features)
 - [Build Setup](#-build-setup)
-- [Techs Using](#-techs-using)
-- [License](#-license)
+- [Techs Using](#%EF%B8%8F-techs-using)
+- [License](#%EF%B8%8F-license)
 - [Contributors](#-contributors)
 
 ## 📜 Project Description
