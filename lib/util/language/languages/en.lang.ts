@@ -5,9 +5,15 @@ const en: Language = {
         "8ball": {
             description: "Try your chance!",
             args: ["...question"]
+        },
+        help: {
+            description: "Help commands!",
+            args: ['"category or command"']
         }
     },
     messages: {
+        thinkingAboutQuestion: "Thinking about your question",
+        askYourQuestion: "You must ask your question for me to answer.",
         withoutDoubt: "Without doubt!",
         itIsCertain: "It is certain!",
         asISeeYes: "As I see it, yes.",
@@ -17,13 +23,15 @@ const en: Language = {
         mySourcesSayNo: "My sources say no.",
         veryDoubtful: "Very doubtful.",
         commandNotFound: "Command not found!",
-        commandUnderMaintenance: "This command is under maintenance!"
+        commandUnderMaintenance: "This command is under maintenance!",
+        listOfCommands: "List of commands of category you choose:"
     },
     words: {
         name: "Name",
         description: "Description",
         arguments: "Arguments",
-        permission: "Permission"
+        permission: "Permission",
+        commands: "Commands"
     }
 }
 
