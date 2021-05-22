@@ -5,12 +5,12 @@
 
 </div>
 
-- [Project Description](#project-description)
-- [Features](#features)
-- [Build Setup](#build-setup)
-- [Techs Using](#techs-using)
-- [License](#licensen)
-- [Contributors](#contributors)
+- [Project Description](#-project-description)
+- [Features](#-features)
+- [Build Setup](#-build-setup)
+- [Techs Using](#-techs-using)
+- [License](#-license)
+- [Contributors](#-contributors)
 
 ## 📜 Project Description
 
@@ -40,19 +40,19 @@ $ npm run start
 $ npm run build
 ```
 
-## Techs Using
+## 🗃️ Techs Using
 - TypeScript
 - Node.js
 - Discord.js
 - discord.js
 - MongoDB (mongoose)
 
-## License
+## 🖋️ License
 
 Licensed with "MIT License".
 
 
-## Contributors
+## 🙌 Contributors
 
 
 <a href="https://github.com/ataege" style="border-radius: 50% !important;">
