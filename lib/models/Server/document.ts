@@ -5,9 +5,9 @@ export interface IServerDocument extends Document {
 	id: Snowflake;
 	prefix: string;
 	language: string;
-	log: LogObject;
-	counter: CounterObject;
-	level: LevelObject;
+	log?: LogObject;
+	counter?: CounterObject;
+	level?: LevelObject;
 }
 
 export type LogObject = { enabled: boolean; channel: string };
