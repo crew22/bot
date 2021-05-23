@@ -33,7 +33,7 @@ $ npm install
 # serve for development mode
 $ npm run dev
 
-# start fot production mode
+# start for production mode
 $ npm run start
 
 # build and launch server
