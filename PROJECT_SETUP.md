@@ -2,7 +2,7 @@
 
 ## Languages
 
-- [English](#-project-description)
+- [English](#English)
 - [Türkçe](#T%C3%BCrk%C3%A7e)
 
 ### English
