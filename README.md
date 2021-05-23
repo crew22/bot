@@ -18,7 +18,7 @@
 
 ## ✨ Features
 
-- Very simplified comamnd and event handler
+- Very simplified command and event handler
 - Language System
 - MongoDB connection
 
@@ -34,8 +34,7 @@ $ npm install
 $ npm run dev
 
 
-# start fot production mode
-
+# start for production mode
 $ npm run start
 
 # build and launch server
