@@ -23,6 +23,7 @@
 - MongoDB connection
 
 ## 🧰 Build Setup
+(For detailed project setup look at [PROJECT_SETUP.md](https://github.com/crew22/bot/blob/beta/PROJECT_SETUP.md))
 
 ```bash
 # Clone repository to your computer first.
@@ -32,7 +33,6 @@ $ npm install
 
 # serve for development mode
 $ npm run dev
-
 
 # start for production mode
 $ npm run start
